@@ -1,6 +1,10 @@
 .container {
   // flex: 1;
-  height: 100%;
+  // justify-content: flex-end;
+  width: 100%;
+  // align-items: center;
+  // padding: 16px;
+  // padding-bottom: 30px;
 }
 
 .title {
@@ -23,7 +27,7 @@
   border-color: #e8e8e8;
   border-radius: 8px;
   text-align: left;
-  margin-bottom: 43px;
+  margin-bottom: 16px;
   padding-left: 16px;
   &:placeholder {
     text-align: start;
@@ -41,6 +45,7 @@
   width: 100%;
   height: 50px;
   border-radius: 100px;
+  // background-color: red;
   border-radius: 100px;
   margin-bottom: 16px;
 }
@@ -65,4 +70,14 @@
   font-size: 16px;
   line-height: 19px;
   text-align: center;
+}
+
+.wrapper {
+  background-color: #f5f5f5;
+  // padding: 0 16px;
+  width: 100%;
+}
+
+.avatar {
+  left: 50%;
 }
