@@ -12,9 +12,12 @@ import {
   // Dimensions,
   // Animated,
 } from "react-native";
-import { Link } from "react-router-native";
 import s from "./registration.module.scss";
 import bg from "../../assets/images/bg.png";
+// import SVG from "react-native-svg-uri";
+import { Link } from "@react-navigation/native";
+
+// import iconPlus from "../../assets/images/icon-plus.svg";
 
 const Registration = () => {
   const [inputStyle, setInputStyle] = useState({});
@@ -24,16 +27,11 @@ const Registration = () => {
   // const value = useRef(new Animated.Value(windowWidth)).current;
 
   const handleFocus = () => {
-    setInputStyle({ borderColor: "red" });
+    // setInputStyle({ borderColor: "red" });
   };
 
   const handleBlur = () => {
-    setInputStyle({ borderColor: "#e8e8e8" });
-  };
-
-  const handleLayout = (e) => {
-    const layotWidth = e.nativeEvent.layout.width;
-    setViewWidth(layotWidth);
+    // setInputStyle({ borderColor: "#e8e8e8" });
   };
 
   // useEffect(() => {
@@ -60,37 +58,38 @@ const Registration = () => {
       >
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View
-            onLayout={handleLayout}
             style={{
+              position: "relative",
               backgroundColor: "#e8e8e8",
-              flex: 0.65,
+              flex: 0.55,
+              // height: 650,
+              paddingTop: 40,
               marginTop: "auto",
               justifyContent: "flex-end",
               paddingBottom: 80,
               borderTopLeftRadius: 20,
               borderTopRightRadius: 20,
-              position: "relative",
               paddingLeft: 16,
               paddingRight: 16,
             }}
           >
-            <Image
-              source={bg}
-              style={[
-                s.avatar,
-                {
-                  width: 200,
-                  height: 200,
-                  borderRadius: 20,
+            <View>
+              <Image
+                source={bg}
+                style={{
                   position: "absolute",
-                  top: -100,
-                  left: "25%",
+                  width: 120,
+                  height: 120,
+                  borderRadius: 20,
+                  top: -65,
+                  left: "33%",
                   // transform: [{ translateX: viewWidth / 2 }],
                   borderColor: "grey",
                   borderWidth: 2,
-                },
-              ]}
-            />
+                }}
+              />
+              {/* <SVG source={iconPlus} width={24} height={24} /> */}
+            </View>
             <Text style={s.title}>Регистрация</Text>
             <KeyboardAvoidingView
             // behavior={Platform.OS == "ios" ? "padding" : "height"}
@@ -130,11 +129,11 @@ const Registration = () => {
             </Pressable>
             <View style={s.recovery}>
               <Link
-                to="/login"
-                className={s.recovery_text}
-                underlayColor="#DDD"
+                to={{ screen: "login", params: { id: "hello from Login" } }}
               >
-                <Text>У Вас уже есть аккаунт? Войти</Text>
+                <Text className={s.recovery_text}>
+                  У Вас уже есть аккаунт? Войти
+                </Text>
               </Link>
             </View>
           </View>

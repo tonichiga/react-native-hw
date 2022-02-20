@@ -10,7 +10,7 @@ import {
 import { useRef, useEffect, useState } from "react";
 import s from "./login.module.scss";
 import bg from "../../assets/images/bg.png";
-import { Link } from "react-router-native";
+import { Link } from "@react-navigation/native";
 
 const Login = () => {
   // const [value, setValue] = useState(0);
@@ -85,11 +85,11 @@ const Login = () => {
               Нет аккаунта? Зарегистрироваться
             </NavLink> */}
             <Link
-              to="/registration"
-              className={s.recovery_text}
-              underlayColor="#DDD"
+              to={{ screen: "registration", params: { id: "hello world" } }}
             >
-              <Text>У Вас уже есть аккаунт? Войти</Text>
+              <Text className={s.recovery_text}>
+                У Вас уже есть аккаунт? Войти
+              </Text>
             </Link>
           </View>
         </View>

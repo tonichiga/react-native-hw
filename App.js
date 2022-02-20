@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, Button } from "react-native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import Container from "./Container";
-import { NativeRouter } from "react-router-native";
+// import { NativeRouter } from "react-router-native";
+import { NavigationContainer } from "@react-navigation/native";
 
 const loadFonts = async () => {
   await Font.loadAsync({
@@ -27,7 +28,7 @@ export default function App() {
     );
   } else {
     return (
-      <NativeRouter>
+      <NavigationContainer>
         <View
           style={{
             fontFamily: "Medium",
@@ -35,7 +36,7 @@ export default function App() {
         >
           <Container />
         </View>
-      </NativeRouter>
+      </NavigationContainer>
     );
   }
 }

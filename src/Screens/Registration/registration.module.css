@@ -1,10 +1,5 @@
 .container {
-  // flex: 1;
-  // justify-content: flex-end;
   width: 100%;
-  // align-items: center;
-  // padding: 16px;
-  // padding-bottom: 30px;
 }
 
 .title {
@@ -13,7 +8,6 @@
   font-size: 30px;
   line-height: 35px;
   text-align: center;
-  // letter-spacing: 0.01em;
   color: #000000;
   margin-bottom: 16px;
 }
@@ -29,9 +23,10 @@
   text-align: left;
   margin-bottom: 16px;
   padding-left: 16px;
-  &:placeholder {
-    text-align: start;
-  }
+}
+
+.input:placeholder {
+  text-align: start;
 }
 
 .marginBottom {
@@ -45,7 +40,6 @@
   width: 100%;
   height: 50px;
   border-radius: 100px;
-  // background-color: red;
   border-radius: 100px;
   margin-bottom: 16px;
 }
@@ -54,7 +48,6 @@
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
-  // background-color: transparent;
   border-radius: 100px;
 }
 
@@ -74,10 +67,6 @@
 
 .wrapper {
   background-color: #f5f5f5;
-  // padding: 0 16px;
   width: 100%;
 }
-
-// .avatar {
-//   left: 50%;
-// }
+/*# sourceMappingURL=registration.module.css.map */
