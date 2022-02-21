@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import {
   View,
   Text,
@@ -14,11 +14,10 @@ import {
 } from "react-native";
 import s from "./registration.module.scss";
 import bg from "../../assets/images/bg.png";
-// import SVG from "react-native-svg-uri";
 import { Link } from "@react-navigation/native";
+import { IconPlus } from "../../Components/SVG";
 
-// import iconPlus from "../../assets/images/icon-plus.svg";
-
+console.log(IconPlus);
 const Registration = () => {
   const [inputStyle, setInputStyle] = useState({});
   const [viewWidth, setViewWidth] = useState(0);
@@ -76,22 +75,29 @@ const Registration = () => {
             <KeyboardAvoidingView
             // behavior={Platform.OS == "ios" ? "padding" : "height"}
             >
-              <View>
+              <View
+                style={{
+                  position: "absolute",
+                  top: -175,
+                  left: "33%",
+                }}
+              >
                 <Image
                   source={bg}
                   style={{
-                    position: "absolute",
                     width: 120,
                     height: 120,
                     borderRadius: 20,
-                    top: -175,
-                    left: "33%",
+
                     // transform: [{ translateX: viewWidth / 2 }],
                     borderColor: "grey",
                     borderWidth: 2,
                   }}
                 />
-                {/* <SVG source={iconPlus} width={24} height={24} /> */}
+
+                <View style={{ position: "absolute", right: -12, top: 70 }}>
+                  <IconPlus />
+                </View>
               </View>
               <Text style={s.title}>Регистрация</Text>
 

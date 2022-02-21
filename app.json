@@ -12,7 +12,7 @@
     },
     "packagerOpts": {
       "config": "metro.config.js",
-      "sourceExts": ["js", "jsx", "scss", "sass"]
+      "sourceExts": ["js", "jsx", "scss", "sass", "svg"]
     },
     "updates": {
       "fallbackToCacheTimeout": 0
