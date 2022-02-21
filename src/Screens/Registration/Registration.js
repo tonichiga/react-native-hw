@@ -61,8 +61,8 @@ const Registration = () => {
             style={{
               position: "relative",
               backgroundColor: "#e8e8e8",
-              flex: 0.55,
-              // height: 650,
+              // flex: 0.55,
+              height: 550,
               paddingTop: 40,
               marginTop: "auto",
               justifyContent: "flex-end",
@@ -73,27 +73,28 @@ const Registration = () => {
               paddingRight: 16,
             }}
           >
-            <View>
-              <Image
-                source={bg}
-                style={{
-                  position: "absolute",
-                  width: 120,
-                  height: 120,
-                  borderRadius: 20,
-                  top: -65,
-                  left: "33%",
-                  // transform: [{ translateX: viewWidth / 2 }],
-                  borderColor: "grey",
-                  borderWidth: 2,
-                }}
-              />
-              {/* <SVG source={iconPlus} width={24} height={24} /> */}
-            </View>
-            <Text style={s.title}>Регистрация</Text>
             <KeyboardAvoidingView
             // behavior={Platform.OS == "ios" ? "padding" : "height"}
             >
+              <View>
+                <Image
+                  source={bg}
+                  style={{
+                    position: "absolute",
+                    width: 120,
+                    height: 120,
+                    borderRadius: 20,
+                    top: -175,
+                    left: "33%",
+                    // transform: [{ translateX: viewWidth / 2 }],
+                    borderColor: "grey",
+                    borderWidth: 2,
+                  }}
+                />
+                {/* <SVG source={iconPlus} width={24} height={24} /> */}
+              </View>
+              <Text style={s.title}>Регистрация</Text>
+
               <TextInput
                 onFocus={handleFocus}
                 onBlur={handleBlur}
@@ -114,28 +115,28 @@ const Registration = () => {
                 secureTextEntry={true}
                 style={{ ...s.input, ...inputStyle, marginBottom: 43 }}
               />
-            </KeyboardAvoidingView>
-            <Pressable
-              style={({ pressed }) => [
-                {
-                  backgroundColor: pressed
-                    ? "rgba(250, 0, 0, 0.3)"
-                    : "rgba(250, 0, 0, 1)",
-                },
-                s.btn,
-              ]}
-            >
-              <Text style={s.text_btn}>Зарегистрироваться</Text>
-            </Pressable>
-            <View style={s.recovery}>
-              <Link
-                to={{ screen: "login", params: { id: "hello from Login" } }}
+              <Pressable
+                style={({ pressed }) => [
+                  {
+                    backgroundColor: pressed
+                      ? "rgba(250, 0, 0, 0.3)"
+                      : "rgba(250, 0, 0, 1)",
+                  },
+                  s.btn,
+                ]}
               >
-                <Text className={s.recovery_text}>
-                  У Вас уже есть аккаунт? Войти
-                </Text>
-              </Link>
-            </View>
+                <Text style={s.text_btn}>Зарегистрироваться</Text>
+              </Pressable>
+              <View style={s.recovery}>
+                <Link
+                  to={{ screen: "login", params: { id: "hello from Login" } }}
+                >
+                  <Text className={s.recovery_text}>
+                    У Вас уже есть аккаунт? Войти
+                  </Text>
+                </Link>
+              </View>
+            </KeyboardAvoidingView>
           </View>
         </TouchableWithoutFeedback>
       </ImageBackground>

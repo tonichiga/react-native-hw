@@ -4,6 +4,10 @@ import {
   TextInput,
   Pressable,
   ImageBackground,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
+  Platform,
   // Animated,
   // Dimensions,
 } from "react-native";
@@ -44,55 +48,63 @@ const Login = () => {
           height: "100%",
         }}
       >
-        <View
-          style={{
-            backgroundColor: "#e8e8e8",
-            flex: 0.5,
-            justifyContent: "flex-end",
-            paddingBottom: 80,
-            paddingLeft: 16,
-            paddingRight: 16,
-            marginTop: "auto",
-            paddingTop: 16,
-            borderTopLeftRadius: 20,
-            borderTopRightRadius: 20,
-          }}
-        >
-          <Text style={s.title}>Войти</Text>
-          <TextInput
-            placeholder={"Логин"}
-            style={{ ...s.input, ...s.marginBottom }}
-          />
-          <TextInput placeholder={"Пароль"} style={s.input} />
-
-          <Pressable
-            style={({ pressed }) => [
-              {
-                backgroundColor: pressed
-                  ? "rgba(250, 0, 0, 0.3)"
-                  : "rgba(250, 0, 0, 1)",
-              },
-              s.btn,
-            ]}
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <KeyboardAvoidingView
+            style={{ height: "100%" }}
+            behavior={Platform.OS == "ios" ? "padding" : "height"}
           >
-            <Text style={s.text_btn}>Войти</Text>
-          </Pressable>
-          <View style={s.recovery}>
-            {/* <NavLink
+            <View
+              style={{
+                backgroundColor: "#e8e8e8",
+                // flex: 0.5,
+                height: 500,
+                justifyContent: "flex-end",
+                paddingBottom: 80,
+                paddingLeft: 16,
+                paddingRight: 16,
+                marginTop: "auto",
+                paddingTop: 16,
+                borderTopLeftRadius: 20,
+                borderTopRightRadius: 20,
+              }}
+            >
+              <Text style={s.title}>Войти</Text>
+              <TextInput
+                placeholder={"Логин"}
+                style={{ ...s.input, ...s.marginBottom }}
+              />
+              <TextInput placeholder={"Пароль"} style={s.input} />
+
+              <Pressable
+                style={({ pressed }) => [
+                  {
+                    backgroundColor: pressed
+                      ? "rgba(250, 0, 0, 0.3)"
+                      : "rgba(250, 0, 0, 1)",
+                  },
+                  s.btn,
+                ]}
+              >
+                <Text style={s.text_btn}>Войти</Text>
+              </Pressable>
+              <View style={s.recovery}>
+                {/* <NavLink
               className={({ isActive }) => s.recovery_text}
               to="/registration"
             >
               Нет аккаунта? Зарегистрироваться
             </NavLink> */}
-            <Link
-              to={{ screen: "registration", params: { id: "hello world" } }}
-            >
-              <Text className={s.recovery_text}>
-                У Вас уже есть аккаунт? Войти
-              </Text>
-            </Link>
-          </View>
-        </View>
+                <Link
+                  to={{ screen: "registration", params: { id: "hello world" } }}
+                >
+                  <Text className={s.recovery_text}>
+                    У Вас уже есть аккаунт? Войти
+                  </Text>
+                </Link>
+              </View>
+            </View>
+          </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
       </ImageBackground>
     </View>
   );
