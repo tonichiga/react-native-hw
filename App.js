@@ -29,11 +29,7 @@ export default function App() {
   } else {
     return (
       <NavigationContainer>
-        <View
-          style={{
-            fontFamily: "Medium",
-          }}
-        >
+        <View>
           <Container />
         </View>
       </NavigationContainer>

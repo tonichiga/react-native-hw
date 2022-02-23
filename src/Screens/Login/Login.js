@@ -16,7 +16,7 @@ import s from "./login.module.scss";
 import bg from "../../assets/images/bg.png";
 import { Link } from "@react-navigation/native";
 
-const Login = () => {
+const Login = ({ onAuth }) => {
   // const [value, setValue] = useState(0);
   // const windowWidth = Dimensions.get("window").width;
   // const value = useRef(new Animated.Value(windowWidth)).current;
@@ -76,6 +76,7 @@ const Login = () => {
               <TextInput placeholder={"Пароль"} style={s.input} />
 
               <Pressable
+                onPress={onAuth}
                 style={({ pressed }) => [
                   {
                     backgroundColor: pressed
