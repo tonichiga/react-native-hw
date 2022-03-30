@@ -17,7 +17,6 @@ const loadFonts = async () => {
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
-
   if (!isReady) {
     return (
       <AppLoading
@@ -29,7 +28,7 @@ export default function App() {
   } else {
     return (
       <NavigationContainer>
-        <View>
+        <View style={{ flex: 1 }}>
           <Container />
         </View>
       </NavigationContainer>

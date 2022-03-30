@@ -9,6 +9,7 @@ import {
   Keyboard,
   ImageBackground,
   Image,
+  TouchableOpacity,
   // Dimensions,
   // Animated,
 } from "react-native";
@@ -17,8 +18,7 @@ import bg from "../../assets/images/bg.png";
 import { Link } from "@react-navigation/native";
 import { IconPlus } from "../../Components/SVG";
 
-console.log(IconPlus);
-const Registration = () => {
+const Registration = ({ navigation }) => {
   const [inputStyle, setInputStyle] = useState({});
   const [viewWidth, setViewWidth] = useState(0);
 
@@ -134,13 +134,15 @@ const Registration = () => {
                 <Text style={s.text_btn}>Зарегистрироваться</Text>
               </Pressable>
               <View style={s.recovery}>
-                <Link
-                  to={{ screen: "login", params: { id: "hello from Login" } }}
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("login")}
+
+                  // to={{ screen: "registration", params: { id: "hello world" } }}
                 >
                   <Text className={s.recovery_text}>
-                    У Вас уже есть аккаунт? Войти
+                    Уже существует аккаунт? Войти
                   </Text>
-                </Link>
+                </TouchableOpacity>
               </View>
             </KeyboardAvoidingView>
           </View>

@@ -8,6 +8,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Platform,
+  TouchableOpacity,
   // Animated,
   // Dimensions,
 } from "react-native";
@@ -16,7 +17,7 @@ import s from "./login.module.scss";
 import bg from "../../assets/images/bg.png";
 import { Link } from "@react-navigation/native";
 
-const Login = ({ onAuth }) => {
+const Login = ({ onAuth, navigation }) => {
   // const [value, setValue] = useState(0);
   // const windowWidth = Dimensions.get("window").width;
   // const value = useRef(new Animated.Value(windowWidth)).current;
@@ -95,13 +96,15 @@ const Login = ({ onAuth }) => {
             >
               Нет аккаунта? Зарегистрироваться
             </NavLink> */}
-                <Link
-                  to={{ screen: "registration", params: { id: "hello world" } }}
+                <TouchableOpacity
+                  onPress={() => navigation.navigate("registration")}
+
+                  // to={{ screen: "registration", params: { id: "hello world" } }}
                 >
                   <Text className={s.recovery_text}>
-                    У Вас уже есть аккаунт? Войти
+                    Нет аккаунта? Зарегистрироваться
                   </Text>
-                </Link>
+                </TouchableOpacity>
               </View>
             </View>
           </KeyboardAvoidingView>

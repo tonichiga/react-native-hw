@@ -13,5 +13,5 @@ const Container = () => {
 export default Container;
 
 const s = StyleSheet.create({
-  container: { height: "100%" },
+  container: { flex: 1 },
 });
